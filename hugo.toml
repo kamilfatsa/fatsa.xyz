@@ -1,0 +1,104 @@
+# Site settings
+baseURL = "https://fatsa.xyz"
+languageCode = "en-GB"
+title = "kml 🐈"
+theme = "hugo-split-theme"
+disableKinds = ["section", "taxonomy", "RSS", "sitemap"]
+disableHugoGeneratorInject = true
+
+# Local preview mode
+relativeURLs = true
+uglyURLs = false
+
+# Copyright
+copyright = "&copy;2026 M. K. F"
+
+[services]
+  [services.googleAnalytics]
+    # Enter your tracking code to enable Google Analytics
+    ID = ""
+
+[params]
+
+  # Metadata for search engines and social sharing
+  author = "M. K. F."
+  description = "Fatsa.xyz is a single page personal web site that meets the visitors with a couple of links."
+
+  # Whether you purchased the license from the author.
+  licensed = false
+
+  # Favicon
+  favicon = "favicon.ico"
+
+  # Section - Visual
+  [params.visual]
+
+    # Image
+    [params.visual.image]
+      enable = false
+      file = "images/background.jpg"
+      position = "center center"
+
+    # Video
+    [params.visual.video]
+      enable = true
+      mute = true
+      file = "videos/background.mp4"
+      # youtubeId = "dk9uNWPP7EA"
+
+  # Links
+  # Links List #1
+  [[params.links]]
+    [params.links.list1]
+      heading = "Connect"
+
+      [[params.links.list1.link]]
+        text = "Email"
+        url = "mailto:fatsa@duck.com"
+        new_tab = false # Default, open at same tab
+#    [[params.links.list1.link]]
+#      text = "Linkedin"
+#      url = "https://www.linkedin.com/in/fatsa"
+
+  # Links List #2
+  [[params.links]]
+    [params.links.list2]
+      heading = "Social"
+
+      [[params.links.list2.link]]
+        text = "Goodreads"
+        url = "https://www.goodreads.com/kamilfatsa"
+#    [[params.links.list2.link]]
+#      text = "Letterboxd"
+#      url = "https://letterboxd.com/kamilfatsa/"
+
+  # Links List #3
+  [[params.links]]
+    [params.links.list3]
+      heading = "Portfolio"
+
+      [[params.links.list3.link]]
+        text = "Behance"
+        url = "https://www.be.net/fatsa"
+#     [[params.links.list3.link]]
+#       text = "Artstation"
+#       url = "https://www.artstation.com/fatsa"
+
+  # Links List #4
+  [[params.links]]
+    [params.links.list3]
+      heading = "Legal"
+
+      [[params.links.list3.link]]
+        text = "Ethics"
+        url = "/ethics/"
+
+[server]
+[[server.headers]]
+    for = '/**'
+    [server.headers.values]
+      Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src https://www.youtube.com/embed/; img-src 'self' https://dummyimage.com"
+      Referrer-Policy = 'strict-origin-when-cross-origin'
+      X-Content-Type-Options = 'nosniff'
+      X-Frame-Options = 'DENY'
+      X-XSS-Protection = '1; mode=block'
